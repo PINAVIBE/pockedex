@@ -11,6 +11,7 @@ fetch("https://pokeapi.co/api/v2/pokemon")
             imagen.src = dato.sprites.other["official-artwork"].front_default
             tarjeta.appendChild(imagen)
             document.getElementById("contenedor").appendChild(tarjeta)
+            console.log(dato.abilities)
         })
     });
 })
