@@ -6,12 +6,16 @@ fetch("https://pokeapi.co/api/v2/pokemon")
         .then(respuesta => respuesta.json())
         .then(dato => {
             let tarjeta = document.createElement("div")
-            tarjeta.textContent = dato.name
+            let nombre = document.createElement("p")
+            nombre.textContent = dato.name
+            tarjeta.appendChild(nombre)
             let imagen = document.createElement("img")
             imagen.src = dato.sprites.other["official-artwork"].front_default
             tarjeta.appendChild(imagen)
             document.getElementById("contenedor").appendChild(tarjeta)
-            console.log(dato.abilities)
+            let habilidad = document.createElement("p")
+            habilidad.textContent = dato.abilities[0].ability.name
+            tarjeta.appendChild(habilidad)
         })
     });
 })
