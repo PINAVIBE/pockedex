@@ -14,9 +14,11 @@ fetch("https://pokeapi.co/api/v2/pokemon")
             imagen.src = dato.sprites.other["official-artwork"].front_default
             tarjeta.appendChild(imagen)
             document.getElementById("contenedor").appendChild(tarjeta)
-            let habilidad = document.createElement("p")
-            habilidad.textContent = dato.abilities[0].ability.name
-            tarjeta.appendChild(habilidad)
+            dato.abilities.forEach(poderes => {
+                let habilidad = document.createElement("p")
+                habilidad.textContent = poderes.ability.name
+                tarjeta.appendChild(habilidad)
+            })
            
         })
     });
