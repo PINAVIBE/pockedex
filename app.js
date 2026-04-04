@@ -6,6 +6,7 @@ fetch("https://pokeapi.co/api/v2/pokemon")
         .then(respuesta => respuesta.json())
         .then(dato => {
             let tarjeta = document.createElement("div")
+            tarjeta.classList.add("tarjeta")
             let nombre = document.createElement("p")
             nombre.textContent = dato.name
             tarjeta.appendChild(nombre)
@@ -16,6 +17,7 @@ fetch("https://pokeapi.co/api/v2/pokemon")
             let habilidad = document.createElement("p")
             habilidad.textContent = dato.abilities[0].ability.name
             tarjeta.appendChild(habilidad)
+           
         })
     });
 })
