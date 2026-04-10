@@ -19,6 +19,11 @@ fetch("https://pokeapi.co/api/v2/pokemon")
                 habilidad.textContent = poderes.ability.name
                 tarjeta.appendChild(habilidad)
             })
+            tarjeta.addEventListener("click", () => {
+                document.getElementById("modal").style.display = "block"
+
+
+            })
            
         })
     });
