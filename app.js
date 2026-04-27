@@ -21,7 +21,18 @@ fetch("https://pokeapi.co/api/v2/pokemon")
             })
             tarjeta.addEventListener("click", () => {
                 document.getElementById("modal").style.display = "block"
-
+                document.getElementById("modal-nombre").textContent = dato.name
+                document.getElementById("modal-imagen").src = dato.sprites.other["official-artwork"].front_default
+                document.getElementById("modal-habilidades").innerHTML = ""
+                dato.abilities.forEach(habilidade => {
+                    let habilidad = document.createElement("p")
+                    habilidad.textContent = habilidade.ability.name
+                    document.getElementById("modal-habilidades").appendChild(habilidad)
+                })
+                
+            })
+            document.getElementById("cerrar").addEventListener("click", () => {
+            document.getElementById("modal").style.display = "none"
 
             })
            
